@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Plasma cursor blob -->
+  <div class="plasma-cursor" id="plasmaCursor"></div>
+  <div class="plasma-cursor-inner" id="plasmaCursorInner"></div>
+  <!-- Ambient background orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Dynamic plasma field (particles controlled by JS) -->
+  <div id="plasmaField" class="plasma-field" aria-hidden="true"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>
+      <span class="logo-name">Dev</span>
+      <span class="logo-bracket">/&gt;</span>
+    </div>
+
+    <!-- Plasma nav blob that moves with hover -->
+    <div class="nav-plasma-blob" id="navPlasmaBlob"></div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-cta">Hire Me</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#home" class="mobile-link">Home</a></li>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="section hero" id="home">
+    <div class="hero-content reveal">
+      <div class="hero-tag">
+        <span class="tag-dot"></span>
+        Available for opportunities
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line">Full Stack</span>
+        <span class="title-line accent-line">Developer</span>
+        <span class="title-line">& Engineer</span>
+      </h1>
+      <p class="hero-desc">
+        BSCS Student crafting high-performance web applications with MERN, MEAN,
+        Laravel &amp; beyond. I turn complex problems into elegant digital experiences.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          <span>View Projects</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Let's Talk</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">3+</span>
+          <span class="stat-label">Years Learning</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="profile-card glass-card reveal">
+        <div class="profile-badge">Profile</div>
+        <div class="profile-photo-wrap">
+          <img src="img/profile.jpg" alt="Profile photo" class="profile-photo" />
+        </div>
+        <div class="profile-info">
+          <h3>Hello, I’m Muhammad Bilawal Khan Ghouri</h3>
+          <p>
+            A full-stack engineer crafting high-performance web solutions with clean architecture,
+            modern interfaces, and secure APIs.
+          </p>
+          <div class="profile-tags">
+            <span>Remote-friendly</span>
+            <span>AI-aware</span>
+            <span>Mobile-first</span>
+          </div>
+        </div>
+      </div>
+      <div class="code-card glass-card reveal">
+        <div class="code-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="code-filename">developer.js</span>
+        </div>
+        <pre class="code-body"><code><span class="c-keyword">const</span> <span class="c-var">developer</span> <span class="c-op">=</span> {
+  <span class="c-prop">name</span><span class="c-op">:</span> <span class="c-str">"Your Name"</span>,
+  <span class="c-prop">role</span><span class="c-op">:</span> <span class="c-str">"Full Stack Dev"</span>,
+  <span class="c-prop">stack</span><span class="c-op">:</span> [
+    <span class="c-str">"MERN"</span>, <span class="c-str">"MEAN"</span>,
+    <span class="c-str">"Laravel"</span>, <span class="c-str">"SQL"</span>
+  ],
+  <span class="c-prop">passion</span><span class="c-op">:</span> <span class="c-str">"Building things"</span>,
+  <span class="c-prop">available</span><span class="c-op">:</span> <span class="c-bool">true</span>
+};</code></pre>
+        <div class="code-cursor-line">
+          <span class="c-comment">// open to work →</span>
+          <span class="blinking-cursor">|</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="section about" id="about">
+    <div class="section-header">
+      <span class="section-eyebrow">Who I Am</span>
+      <h2 class="section-title">About <span class="text-accent">Me</span></h2>
+    </div>
+
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <div class="glass-card about-card">
+          <p>
+            I'm a passionate <strong>BSCS student</strong> with deep expertise in full-stack web development.
+            I build scalable web apps end-to-end — from RESTful APIs and database architecture to
+            responsive, pixel-perfect UIs.
+          </p>
+          <p>
+            My stack spans <strong>MERN</strong> (MongoDB, Express, React, Node), <strong>MEAN</strong>,
+            and <strong>Laravel/PHP</strong>, backed by solid knowledge of data structures,
+            computer networking, SQL/NoSQL databases, and JWT authentication.
+          </p>
+          <p>
+            I thrive on complexity — whether that's optimizing database queries, architecting
+            microservices, or engineering seamless user interfaces.
+          </p>
+          <div class="about-chips">
+            <span class="chip">Problem Solver</span>
+            <span class="chip">Fast Learner</span>
+            <span class="chip">Team Player</span>
+            <span class="chip">Open Source</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-cards">
+        <div class="glass-card mini-card">
+          <div class="mini-icon">🎓</div>
+          <h4>Education</h4>
+          <p>BS Computer Science</p>
+          <span class="mini-sub">Ongoing</span>
+        </div>
+        <div class="glass-card mini-card">
+          <div class="mini-icon">💻</div>
+          <h4>Experience</h4>
+          <p>3+ Years Coding</p>
+          <span class="mini-sub">Self-taught + Academic</span>
+        </div>
+        <div class="glass-card mini-card">
+          <div class="mini-icon">🌐</div>
+          <h4>Focus</h4>
+          <p>Full Stack Web</p>
+          <span class="mini-sub">Frontend + Backend</span>
+        </div>
+        <div class="glass-card mini-card">
+          <div class="mini-icon">⚡</div>
+          <h4>Approach</h4>
+          <p>Clean & Scalable</p>
+          <span class="mini-sub">Best Practices</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section class="section skills" id="skills">
+    <div class="section-header">
+      <span class="section-eyebrow">What I Know</span>
+      <h2 class="section-title">My <span class="text-accent">Skills</span></h2>
+    </div>
+
+    <div class="skills-categories">
+
+      <!-- Frontend -->
+      <div class="skill-group">
+        <h3 class="skill-group-title">
+          <span class="group-icon">🎨</span> Frontend
+        </h3>
+        <div class="skill-cards">
+          <div class="glass-card skill-card" data-level="90">
+            <div class="skill-icon">⚛️</div>
+            <span class="skill-name">React.js</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+          <div class="glass-card skill-card" data-level="85">
+            <div class="skill-icon">🅰️</div>
+            <span class="skill-name">Angular</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="glass-card skill-card" data-level="95">
+            <div class="skill-icon">🌐</div>
+            <span class="skill-name">HTML / CSS</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+          </div>
+          <div class="glass-card skill-card" data-level="90">
+            <div class="skill-icon">✨</div>
+            <span class="skill-name">JavaScript</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="skill-group">
+        <h3 class="skill-group-title">
+          <span class="group-icon">⚙️</span> Backend
+        </h3>
+        <div class="skill-cards">
+          <div class="glass-card skill-card" data-level="88">
+            <div class="skill-icon">🟢</div>
+            <span class="skill-name">Node.js</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+          </div>
+          <div class="glass-card skill-card" data-level="85">
+            <div class="skill-icon">🚂</div>
+            <span class="skill-name">Express.js</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="glass-card skill-card" data-level="82">
+            <div class="skill-icon">🐘</div>
+            <span class="skill-name">Laravel / PHP</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+          </div>
+          <div class="glass-card skill-card" data-level="78">
+            <div class="skill-icon">🔐</div>
+            <span class="skill-name">JWT / Auth</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Database & Tools -->
+      <div class="skill-group">
+        <h3 class="skill-group-title">
+          <span class="group-icon">🗄️</span> Database & Tools
+        </h3>
+        <div class="skill-cards">
+          <div class="glass-card skill-card" data-level="85">
+            <div class="skill-icon">🍃</div>
+            <span class="skill-name">MongoDB</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="glass-card skill-card" data-level="80">
+            <div class="skill-icon">🐬</div>
+            <span class="skill-name">MySQL / SQL</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="glass-card skill-card" data-level="75">
+            <div class="skill-icon">🔧</div>
+            <span class="skill-name">XAMPP</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="glass-card skill-card" data-level="80">
+            <div class="skill-icon">🌿</div>
+            <span class="skill-name">Git / GitHub</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core CS -->
+      <div class="skill-group">
+        <h3 class="skill-group-title">
+          <span class="group-icon">🧠</span> Core CS
+        </h3>
+        <div class="skill-cards">
+          <div class="glass-card skill-card" data-level="85">
+            <div class="skill-icon">🌳</div>
+            <span class="skill-name">Data Structures</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="glass-card skill-card" data-level="80">
+            <div class="skill-icon">🔗</div>
+            <span class="skill-name">Networking</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="glass-card skill-card" data-level="82">
+            <div class="skill-icon">⚡</div>
+            <span class="skill-name">Algorithms</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+          </div>
+          <div class="glass-card skill-card" data-level="78">
+            <div class="skill-icon">🏗️</div>
+            <span class="skill-name">System Design</span>
+            <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section class="section projects" id="projects">
+    <div class="section-header">
+      <span class="section-eyebrow">What I've Built</span>
+      <h2 class="section-title">Featured <span class="text-accent">Projects</span></h2>
+    </div>
+
+    <div class="projects-list">
+
+      <section class="section project-single reveal" id="project-gig-marketplace">
+        <div class="glass-card project-card featured">
+          <div class="project-tag">Featured</div>
+          <div class="project-header">
+            <div class="project-icon">🛒</div>
+            <div class="project-links">
+              <a href="#" class="icon-link" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+              <a href="https://gig-marketplace-project-client.vercel.app/" target="_blank" rel="noreferrer noopener" class="icon-link" title="Live Demo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">GIG MarketPlace</h3>
+          <p class="project-desc">
+            Full-featured MERN GIG MarketPlace WEb application with JWT auth, Stripe payments,
+            admin dashboard, Gig Creation, Moderation , and order management.
+          </p>
+          <div class="project-actions">
+            <a class="btn btn-primary" href="https://gig-marketplace-project-client.vercel.app/" target="_blank" rel="noreferrer noopener">Explore</a>
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section project-single reveal" id="project-drone-delivery">
+        <div class="glass-card project-card">
+          <div class="project-header">
+            <div class="project-icon">📋</div>
+            <div class="project-links">
+              <a href="#" class="icon-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+              <a href="#" class="icon-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+            </div>
+          </div>
+          <h3 class="project-title">Drone Delivery System</h3>
+          <p class="project-desc">
+            MERN stack based Web application Making Delivery Faster and reliable using real-time tracking
+            and RESTful API backend.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Angular</span>
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">PHP</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section project-single reveal" id="project-ghouri-composing">
+        <div class="glass-card project-card">
+          <div class="project-header">
+            <div class="project-icon">💬</div>
+            <div class="project-links">
+              <a href="#" class="icon-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+              <a href="#" class="icon-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+            </div>
+          </div>
+          <h3 class="project-title">Ghouri Computer Composing (business) </h3>
+          <p class="project-desc">
+            Built a comprehensive web application for Ghouri Computer Composing, enabling efficient management of computer composing
+            services, customer orders, and service tracking. The system streamlines operations and enhances customer experience.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section project-single reveal" id="project-student-management">
+        <div class="glass-card project-card">
+          <div class="project-header">
+            <div class="project-icon">📊</div>
+            <div class="project-links">
+              <a href="#" class="icon-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+              <a href="#" class="icon-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+            </div>
+          </div>
+          <h3 class="project-title">Student Management System</h3>
+          <p class="project-desc">
+            XAMPP-based student management system with course enrollment and student record management, built with PHP and MySQL.
+            Crud operations and data validation are implemented for secure and efficient management of student data.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">XAMPP</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section contact" id="contact">
+    <div class="section-header">
+      <span class="section-eyebrow">Get In Touch</span>
+      <h2 class="section-title">Let's <span class="text-accent">Connect</span></h2>
+    </div>
+
+    <div class="contact-grid reveal">
+      <div class="contact-info">
+        <div class="glass-card contact-card">
+          <h3>Ready to build something great?</h3>
+          <p>
+            Whether you need a full-stack web app, a REST API, or a polished frontend —
+            I'm open for freelance projects, internships, and collaborations.
+          </p>
+          <div class="contact-items">
+            <a href="mailto:ghouri.dev.784@gmail.com" class="contact-item">
+              <div class="contact-item-icon">📧</div>
+              <div>
+                <span class="contact-item-label">Email</span>
+                <span class="contact-item-value">ghouri.dev.784@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/muhmmad-bilawal-khan-ghouri-63b876318/" target="_blank" rel="noreferrer noopener" class="contact-item">
+              <div class="contact-item-icon">💼</div>
+              <div>
+                <span class="contact-item-label">LinkedIn</span>
+                <span class="contact-item-value">linkedin.com/in/muhmmad-bilawal-khan-ghouri-63b876318</span>
+              </div>
+            </a>
+            <a href="https://github.com/ghouridevelper" target="_blank" rel="noreferrer noopener" class="contact-item">
+              <div class="contact-item-icon">🐙</div>
+              <div>
+                <span class="contact-item-label">GitHub</span>
+                <span class="contact-item-value">github.com/ghouridevelper</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <div class="glass-card form-card">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xojojvjp" method="POST">
+            <input type="hidden" name="_subject" value="New message from portfolio" />
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Project Collaboration" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            </button>
+            <div class="form-status" id="formStatus" aria-live="polite"></div>
+            <p class="form-note">Messages are forwarded directly to your email through Formspree. Replace the form action URL with your Formspree endpoint.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-name">Dev</span>
+        <span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-text">Built with passion. Designed to impress.</p>
+      <p class="footer-copy">© 2025 Muhammad Bilawal Khan Ghouri. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
